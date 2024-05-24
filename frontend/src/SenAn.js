@@ -60,7 +60,7 @@ function SenAn() {
                   alt={msg.sender}
                   className="avatar"
                 />  
-                <p className={`alert ${msg.sender === 'user' ? 'alert-primary' : 'alert-secondary'} mx-2`} role="alert">
+                <p className={`alert ${msg.sender === 'user' ? 'alert-primary' : 'alert-secondary'} mx-2`} role="alert" style={{ whiteSpace: 'pre-line' }}>
                   {msg.text}
                 </p>
               </div>
