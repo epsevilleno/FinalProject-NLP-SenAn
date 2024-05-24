@@ -9,7 +9,6 @@ function SenAn() {
 
   const handleSend = () => {
 
-
     if (input.trim()) {
       const userMessage = { text: input, sender: 'user' };
       setMessages(prevMessages => [...prevMessages, userMessage]);
@@ -37,12 +36,15 @@ function SenAn() {
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       })
       .catch((error) => {
+        console.error('Error:', error);
+        const errorMessage = 'An error occurred while sending the message. Please try again.';
+        const errorNotification = { text: errorMessage, sender: 'system', isError: true };
+        setMessages((prevMessages) => [...prevMessages, errorNotification]);
       });
     }
   };
 
   useEffect(() => {
-    // Scroll to the bottom whenever messages change
     if (chatHistoryRef.current) {
       chatHistoryRef.current.scrollTop = chatHistoryRef.current.scrollHeight;
     }

@@ -15,7 +15,7 @@ def userInput():
     text = data.get('text', '')
     
     if len(text) > 300:
-        return jsonify({'label': 'Error: Character exceeds limit of 300 characters', 'input': text}), 400
+        return jsonify({'label': 'Error: Input exceeds limit of 300 characters', 'input': text}), 400
     
     if not re.search(r'[a-zA-Z]', text):
         return jsonify({'label': 'Error: Input must contain at least one letter', 'input': text}), 400
@@ -25,6 +25,7 @@ def userInput():
     nltk.download('punkt')
     
     tokens = word_tokenize(text)
+    
     num_tokens = len(tokens)
     tokenized_text = ' '.join(tokens)
     

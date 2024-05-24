@@ -6,11 +6,11 @@
 .chat-history {
   flex: 1;
   padding: 10px;
-  overflow-y: auto; /* Ensure the chat history is scrollable if content overflows */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  overflow-y: auto; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
-.chat-history::-webkit-scrollbar { /* Webkit browsers */
+.chat-history::-webkit-scrollbar { 
   width: 0;
   height: 0;
 }
@@ -76,7 +76,7 @@ body {
 }
 
 .fixed-card-body {
-  height: calc(100% - 56px); /* Adjust based on the height of the header and footer */
+  height: calc(100% - 56px); 
   overflow-y: hidden;
   border-radius: 10px;
 }
@@ -91,7 +91,7 @@ body {
   font-weight: bold;
   margin-top: 200px;
   margin-bottom: 20px;
-  color: #B2B2F5; /* Adjust color as needed */
+  color: #B2B2F5; 
 }
 
 .subheader {
@@ -102,13 +102,13 @@ body {
 .footer1{
   font-size: 14px;
   margin-top: 100px;
-  opacity: 0.8; /* Slightly dim the footer text */
+  opacity: 0.8; 
 }
 
 .footer2 {
   font-size: 14px;
   margin-top: 10px;
-  opacity: 0.8; /* Slightly dim the footer text */
+  opacity: 0.8; 
 }
 
 .custom-margin-left {
