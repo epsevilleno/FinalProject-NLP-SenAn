@@ -37,7 +37,10 @@ function SenAn() {
       })
       .catch((error) => {
         console.error('Error:', error);
-        const errorMessage = 'An error occurred while sending the message. Please try again.';
+        let errorMessage = 'An error occurred while sending the message. Please try again.';
+        if (error.message === 'Failed to fetch') {
+          errorMessage = 'Could not connect to the server. Please check the connection and try again.';
+        }
         const errorNotification = { text: errorMessage, sender: 'system', isError: true };
         setMessages((prevMessages) => [...prevMessages, errorNotification]);
       });
