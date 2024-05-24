@@ -4,7 +4,15 @@
 }
 
 .chat-history {
+  flex: 1;
   padding: 10px;
+  overflow-y: auto; /* Ensure the chat history is scrollable if content overflows */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.chat-history::-webkit-scrollbar { /* Webkit browsers */
+  width: 0;
+  height: 0;
 }
 
 .message {
@@ -15,4 +23,112 @@
   display: inline-block;
   max-width: 70%;
   word-wrap: break-word;
+}
+
+.left-container, .right-container {
+  height: 100vh;
+}
+.left-container {
+  background-color: #13072E;
+  color: white;
+  text-align:left;
+}
+
+.right-container {
+  padding: 0px;
+  margin-left: 100px;
+  margin-right: 30px;
+  border-radius: 10px;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  background-color: #13072E;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.alert-primary {
+  background-color: #674A9E;
+  color: white;
+  margin-left: auto;
+  border-radius: 25px;
+}
+
+.alert-secondary {
+  background-color: #165FC1;
+  color: white;
+  border-radius: 25px;
+}
+
+.card {
+  background-color: #B2B2F5;
+  border-radius: 15px;
+}
+
+.fixed-card-body {
+  height: calc(100% - 56px); /* Adjust based on the height of the header and footer */
+  overflow-y: hidden;
+  border-radius: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.header {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  color: #B2B2F5; /* Adjust color as needed */
+}
+
+.subheader {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer1{
+  font-size: 14px;
+  margin-top: 100px;
+  opacity: 0.8; /* Slightly dim the footer text */
+}
+
+.footer2 {
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.8; /* Slightly dim the footer text */
+}
+
+.custom-margin-left {
+  margin-left: 100px
+}
+
+
+.btn-primary{
+  color: #ffffff;
+  background-color: #B2B2F5;
+  border-color: #B2B2F5;
+  border-radius: 50%;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.form-control{
+  padding-right: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
