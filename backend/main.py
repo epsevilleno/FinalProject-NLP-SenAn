@@ -2,6 +2,7 @@ import nltk
 from flask import request, jsonify, Flask, render_template
 from flask_cors import CORS
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import re
 
 app = Flask(__name__)
 CORS(app)
@@ -10,6 +11,12 @@ CORS(app)
 def userInput():
     data = request.get_json()
     text = data.get('text', '')
+    
+    if len(text) > 300:
+        return jsonify({'label': 'Error: Character exceeds limit of 300 characters', 'input': text}), 400
+    
+    if not re.search(r'[a-zA-Z]', text):
+        return jsonify({'label': 'Error: Input must contain at least one letter', 'input': text}), 400
     
     nltk.download('vader_lexicon')
     sid = SentimentIntensityAnalyzer()

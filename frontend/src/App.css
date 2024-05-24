@@ -116,19 +116,24 @@ body {
 }
 
 
-.btn-primary{
+.btn-primary {
   color: #ffffff;
   background-color: #B2B2F5;
   border-color: #B2B2F5;
-  border-radius: 50%;
-  margin-right: 0px;
-  margin-bottom: 10px;
-  margin-top: 5px;
+  border-radius: 0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
-.form-control{
-  padding-right: 50%;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-top: 5px;
+.input-group .form-control {
+  border-top-left-radius: 25px; 
+  border-bottom-left-radius: 25px; 
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
