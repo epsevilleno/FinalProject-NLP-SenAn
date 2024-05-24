@@ -32,11 +32,11 @@ def userInput():
     score = ((sid.polarity_scores(str(tokenized_text))))['compound']
     
     if(score > 0):
-        label = 'The text was analyzed to have positive sentiments! '
+        label = 'The text was analyzed to have positive sentiments 😃'
     elif(score == 0):
-        label = 'The text was analyzed to have neutral sentiments!'
+        label = 'The text was analyzed to have neutral sentiments 😶'
     else:
-        label = 'The text was analyzed to have negative sentiments!'
+        label = 'The text was analyzed to have negative sentiments ☹️'
     return jsonify({'label': f'{label} \n \n'
                     f'Additional Information: \n'
                     f'Number of Tokens: {num_tokens} \n'                    
